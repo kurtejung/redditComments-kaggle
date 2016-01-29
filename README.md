@@ -7,6 +7,7 @@ There are three simple python scripts used to analyze the data:
 (1) whenToPost.py
  - This script analyzes all comments and calculates an average score for each minute of the day, determining the optimal time to post a comment to reddit to achieve the highest score.  The analysis output is in scoreVtime.png, where the time is in minutes since midnight (0:00 UTC)
  - We observe that the optimal time to post is roughly 12:30 PM UTC (ignoring an outlier at 2:10 AM), which corresponds to 8:30 AM US/NYC time, accounting for daylight savings time.  This suggests that many people check reddit as they wake up and tend to be more generous with upvoting posts early in the morning.  Conversely, the worst time to post is 4:30 AM UTC (12:30 AM US/NYC) when (apparently) people are more cynical as they get tired before heading to bed.
+ - An alternative explanation may be that Reddit's sorting mechanism applies a weight to posts based on how long ago they were posted, sinking posts that are old and not popular.  In this situation, good posts that are posted right as people wake up in the US may simply be seen by more people and have a chance to avoid getting "sunk" due to age.  Similarly, comments that are posted right as people go to bed may not be seen by very many people and will easily get lost and not upvoted.
 
 ![scoreVTime](https://github.com/kurtejung/redditComments-kaggle/blob/master/scoreVtime.png)
  
