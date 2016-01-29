@@ -17,10 +17,7 @@ def func(x, a, b, c):
     return a * np.sin(b *2 * np.pi * x) + c
 
 sql_conn = sqlite3.connect('../input/database.sqlite')
-
-#read in all queries at once to avoid late errors from random db corruption
 res = pd.read_sql("SELECT created_utc, score FROM May2015 WHERE score > 10 ORDER BY score DESC", sql_conn)
-res_part2 = pd.read_sql("SELECT body, controversiality FROM May2015 ORDER BY controversiality DESC LIMIT 10000", sql_conn)
 
 ## First look at the average score per minute
 ## See that maximum value occurs ~12:30 PM UTC (8:30 AM US/NYC)
